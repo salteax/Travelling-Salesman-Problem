@@ -1,10 +1,112 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+
     <title>Travelling Salesman Problem</title>
+
+    <meta name="author" content="Paul Koreng">
+    <meta name="publisher" content="Paul Koreng">
+    <meta name="copyright" content="Paul Koreng">
+
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+
   </head>
+
   <body>
+    <div class="container">
+      <div class="box" id="b1">
+        <div class="menu">
+          <h1>Travelling Salesman Problem</h1>
+
+          <h2>Start- und Endpunkt:</h2>
+          <div class="selection-box">
+            <select class="selection" id="bundeslander-select" required>
+              <option value="" hidden>W&auml;hle einen Start- und Endpunkt</option>
+            </select>
+          </div>
+
+          <h2>Lösungsalgorithmus:</h2>
+          <div class="selection-box">
+            <select class="selection" id="algorithmus-select" required>
+              <option value="0" hidden>W&auml;hle einen Algorithmus</option>
+              <option value="1">Nearest-Neighbor-Heuristik</option>
+              <option value="2">Branch-and-Bound-Verfahren</option>
+            </select>
+          </div>
+
+          <div>
+            <button>Start</button>
+          </div>
+        </div>
+
+      <div class="stats">
+        <h1>Statistiken<h2>
+
+        <h2>Route:</h2>
+        <div class="route">
+          <table>
+            <tr><td></td></tr>
+            <tr><td></td></tr>
+            <tr><td></td></tr>
+            <tr><td></td></tr>
+            <tr><td></td></tr>
+            <tr><td></td></tr>
+            <tr><td></td></tr>
+            <tr><td></td></tr>
+            <tr><td></td></tr>
+            <tr><td></td></tr>
+            <tr><td></td></tr>
+            <tr><td></td></tr>
+            <tr><td></td></tr>
+            <tr><td></td></tr>
+            <tr><td></td></tr>
+            <tr><td></td></tr>
+          </table>
+        </div>
+
+        <h2>Distanz:</h2>
+        <div class="distanz">
+          <p></p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="box" id="b2">
+      <div class="map">
+        <canvas>
+        </canvas>
+      </div>
+    </div>
+    </div>
 
   </body>
+
 </html>
+
+<script>
+  var bundeslander = [
+    'Baden-Württemberg - Stuttgart',
+    'Bayern - München',
+    'Berlin - Berlin',
+    'Brandenburg - Potsdam',
+    'Bremen - Bremen',
+    'Hamburg - Hamburg',
+    'Hessen - Wiesbaden',
+    'Mecklenburg-Vorpommern - Schwerin',
+    'Niedersachsen - Hannover',
+    'Nordrhein-Westfalen - Düsseldorf',
+    'Rheinland-Pfalz - Mainz',
+    'Saarland - Saarbrücken',
+    'Sachsen - Dresden',
+    'Sachsen-Anhalt - Magdeburg',
+    'Schleswig-Holstein - Kiel',
+    'Thüringen - Erfurt'
+  ];
+
+  var select = document.getElementById('bundeslander-select');
+    for(index in bundeslander) {
+      select.options[select.options.length] = new Option(bundeslander[index], index);
+    }
+</script>
