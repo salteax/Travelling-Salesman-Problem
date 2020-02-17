@@ -11,6 +11,8 @@
 
     <link rel="stylesheet" type="text/css" href="./css/style.css">
 
+    <script type="text/javascript" src="./js/nearest-neighbour.js"></script>
+
   </head>
 
   <body>
@@ -22,7 +24,23 @@
           <h2>Start- und Endpunkt:</h2>
           <div class="selection-box">
             <select class="selection" id="bundeslander-select" required>
-              <option value="" hidden>W&auml;hle einen Start- und Endpunkt</option>
+              <option value="0" hidden>W&auml;hle einen Start- und Endpunkt</option>
+              <option value="Stuttgart">Baden-Württemberg - Stuttgart</option>
+              <option value="München">Bayern - München</option>
+              <option value="Berlin">Berlin - Berlin</option>
+              <option value="Potsdam">Brandenburg - Potsdam</option>
+              <option value="Bremen">Bremen - Bremen</option>
+              <option value="Hamburg">Hamburg - Hamburg</option>
+              <option value="Wiesbaden">Hessen - Wiesbaden</option>
+              <option value="Schwerin">Mecklenburg-Vorpommern - Schwerin</option>
+              <option value="Hannover">Niedersachsen - Hannover</option>
+              <option value="Düsseldorf">Nordrhein-Westfalen - Düsseldorf</option>
+              <option value="Mainz">Rheinland-Pfalz - Mainz</option>
+              <option value="Saarbrücken">Saarland - Saarbrücken</option>
+              <option value="Dresden">Sachsen - Dresden</option>
+              <option value="Magdeburg">Sachsen-Anhalt - Magdeburg</option>
+              <option value="Kiel">Schleswig-Holstein - Kiel</option>
+              <option value="Erfurt">Thüringen - Erfurt</option>
             </select>
           </div>
 
@@ -36,7 +54,7 @@
           </div>
 
           <div>
-            <button>Start</button>
+            <button onclick="nearestNeighbour(document.getElementById('bundeslander-select').value)">Start</button>
           </div>
         </div>
 
@@ -44,8 +62,8 @@
         <h1>Statistiken<h2>
 
         <h2>Route:</h2>
-        <div class="route">
-          <table>
+        <div class="route" id="route_tabelle">
+          <table id="tabelle">
             <tr><td></td></tr>
             <tr><td></td></tr>
             <tr><td></td></tr>
@@ -66,8 +84,8 @@
         </div>
 
         <h2>Distanz:</h2>
-        <div class="distanz">
-          <p></p>
+        <div class="distanz" id="route_distanz">
+          <p id='p_distanz'></p>
         </div>
 
       </div>
@@ -83,29 +101,3 @@
   </body>
 
 </html>
-
-<script>
-  var bundeslander = [
-    'Baden-Württemberg - Stuttgart',
-    'Bayern - München',
-    'Berlin - Berlin',
-    'Brandenburg - Potsdam',
-    'Bremen - Bremen',
-    'Hamburg - Hamburg',
-    'Hessen - Wiesbaden',
-    'Mecklenburg-Vorpommern - Schwerin',
-    'Niedersachsen - Hannover',
-    'Nordrhein-Westfalen - Düsseldorf',
-    'Rheinland-Pfalz - Mainz',
-    'Saarland - Saarbrücken',
-    'Sachsen - Dresden',
-    'Sachsen-Anhalt - Magdeburg',
-    'Schleswig-Holstein - Kiel',
-    'Thüringen - Erfurt'
-  ];
-
-  var select = document.getElementById('bundeslander-select');
-    for(index in bundeslander) {
-      select.options[select.options.length] = new Option(bundeslander[index], index);
-    }
-</script>
