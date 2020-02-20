@@ -205,16 +205,18 @@ select::-ms-expand {
 }
 
 .map {
- height: 100%;
+ height: 799px;
+ width: 591px;
  margin: auto;
-}
-
-.map canvas {
- margin-top: 20px;
- height: 95%;
- width: 100%;
+ margin-top: 50px;
  background-image: url('../img/Karte_Deutschland.svg');
  background-repeat: no-repeat;
  background-size: contain;
  background-position: center;
+
+}
+
+.map canvas {
+  height: 799px;
+  width: 591px;
 }

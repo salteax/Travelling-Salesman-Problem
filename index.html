@@ -49,12 +49,13 @@
             <select class="selection" id="algorithmus-select" required>
               <option value="0" hidden>W&auml;hle einen Algorithmus</option>
               <option value="1">Nearest-Neighbor-Heuristik</option>
-              <option value="2">Branch-and-Bound-Verfahren</option>
+              <option value="2">All-Nearest-Neighbor-Heuristik</option>
+              <option value="3">Farthest-Neighbor-Heuristik</option>
             </select>
           </div>
 
           <div>
-            <button onclick="nearestNeighbour(document.getElementById('bundeslander-select').value)">Start</button>
+            <button onclick="auswahlLoesungsverfahren((document.getElementById('bundeslander-select').value),(document.getElementById('algorithmus-select').value))">Start</button>
           </div>
         </div>
 
